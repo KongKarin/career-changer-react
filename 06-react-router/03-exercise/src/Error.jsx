@@ -1,16 +1,16 @@
 // import { useState } from 'react'
 import Layout from './Layout'
 
-const App = () => {
+const Error = () => {
     
     return (
         <Layout>
             <div>
-                Application
+                Error
             </div>
         </Layout>
     )
 }
 
-export default App
+export default Error
 
