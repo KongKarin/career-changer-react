@@ -3,19 +3,34 @@ import ReactDOM from 'react-dom/client'
 import Home from './Home'
 import Admin from './Admin'
 import Login from './Login'
+import Signup from './Signup'
+import UserContext from './UserContext';
 import './assets/style/index.css'
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import UserContext from './UserContext';
-import Signup from './Signup'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />
+  },
+
+  {
+    path: '/Admin',
+    element: <Admin />
+  },
+
+  {
+    path: '/Signup',
+    element: <Signup />
+  },
+
+  {
+    path: '/Login',
+    element: <Login />
   },
 ])
 

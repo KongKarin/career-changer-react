@@ -16,14 +16,43 @@ const Admin = () => {
     //     organization: 'example'
     // }
 
-    const users = fetchData()
-    
+    const users = fetchData(
+        {
+        id: '', 
+        username: '',
+        fullname: '',
+        organization: ''
+        }
+    )
+
     return (
         <div>
             {/* this is example of mapping array of object to html. */}
-            {[{username: 'hello'}].map(item => <div>{item.username}</div>)}
+            <table>
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>Full name</td>
+                        <td>Organization</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {/* {[{username: 'hello'}].map(item => {
+                        <div>{item.username}</div>)}
+                    } */}
+
+                    {users.map((item) => 
+                            <tr key={item.id}>
+                            <td>{item.id}</td>
+                            <td>{item.fullname}</td>
+                            <td>{item.organization}</td>
+                        </tr>
+                    )}
+                    
+                </tbody>
+            </table>
         </div>
     )
 }
-
+ 
 export default Admin

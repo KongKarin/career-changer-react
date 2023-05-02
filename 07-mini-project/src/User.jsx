@@ -1,7 +1,11 @@
+import Navbar from './Navbar';
 
 const User = () => {
     return (
-        <div>USER</div>
+        <div>
+            <h1> THIS IS HOME PAGE </h1>       
+        </div>
+
     )
 }
 

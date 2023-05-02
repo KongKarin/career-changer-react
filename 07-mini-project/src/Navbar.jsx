@@ -1,12 +1,14 @@
-
+import './assets/style/index.css'
 
 const Navbar = () => {
     return (
-        <ul>
-            <li>Home</li>
-            <li>Signup</li>
-            <li>Login</li>
-        </ul>
+        <div className=''> 
+            <ul>
+                <li><a href={'/'}>Home</a></li>
+                <li><a href={'/Signup'}>Sign Up</a></li>
+                <li><a href={'/Login'}>Login</a></li>
+            </ul>
+        </div>
     )
 }
 

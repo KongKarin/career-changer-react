@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react"
 import { Context } from "./UserContext"
 import Admin from './Admin'
 import User from './User'
+import './assets/style/index.css'
 
 const Home = () => {
     // You have to use getUserRole() to get role of current user
@@ -16,9 +17,14 @@ const Home = () => {
     // return type is always string.
     const [role, setRole] = useState()
 
+    useEffect(() => {
+        const _role = getUserRole()
+        setRole(_role) 
+    },[getUserRole])
+
 
     // You have to add condition here according to role.
-    if (role === '?????') {
+    if (role === 'admin') {
         return (
             <Layout>
                 <Admin />
