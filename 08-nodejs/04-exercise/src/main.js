@@ -27,8 +27,8 @@ webServer.post('/company', (request, response) => {
   const name = request.body.name;
   const taxId = request.body.taxId;
   const employees = [];
-  const newUser = { companyID: companyID, name: name, taxId: taxId, employees: employees };
-  company.push(newUser);
+  const newCompany = { companyID: companyID, name: name, taxId: taxId, employees: employees };
+  company.push(newCompany);
 
   response.send("Created Company Success");
 });

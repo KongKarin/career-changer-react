@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getUser, createUser } from "./api/users";
+import { getUser, createUser } from "./api/company";
 
 function App() {
   const [companies, setCompanies] = useState([]);

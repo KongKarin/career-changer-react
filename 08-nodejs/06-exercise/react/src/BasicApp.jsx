@@ -11,7 +11,11 @@ function BasicApp() {
     // axios.get(hostname+route)
     // 2) use async await in axios
     // 3) set Response to companies by useState (setCompanies)
+    const response = await axios.get("http://127.0.0.1:3001/company");
+    // console.log(response.data);
+    setCompanies(response.data);
   };
+
 
   const createCompany = async () => {
     // 0) get name, taxId
@@ -20,13 +24,20 @@ function BasicApp() {
     // body should be dynamic by state
     // 2) use async await in axios
     // 3) alert `Successful create user`
-  };
+    // const newCompany = {name, taxId};
+
+    await axios.post("http://127.0.0.1:3001/company", {
+      // newCompany
+      name: name,
+      taxId: taxId
+    });
+  }
 
   return (
     <div>
       <h1>Basic Application</h1>
-      <button onClick={getUser}>Get Company</button>
-      <button onClick={createUser}>Create Company</button>
+      <button onClick={getCompanies}>Get Company</button>
+      <button onClick={createCompany}>Create Company</button>
       <input
         type="text"
         placeholder="name"
@@ -48,8 +59,8 @@ function BasicApp() {
         <tbody>
           {companies.map((company) => {
             return (
-              <tr key={company.companyId}>
-                <td>{company.companyId}</td>
+              <tr key={company.companyID}>
+                <td>{company.companyID}</td>
                 <td>{company.name}</td>
                 <td>{company.taxId}</td>
               </tr>
